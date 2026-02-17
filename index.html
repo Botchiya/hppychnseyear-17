@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Eid Mubarak</title>
     <meta name="description" content="Selamat Hari Raya Idul Fitri 1445 H">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/roboto-fontface@0.10.0/css/roboto/roboto-fontface.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/roboto-fontface@0.10.0/css/roboto/roboto-fontface.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <style>
     @font-face {
@@ -47,7 +49,7 @@
     .main-container {
         max-width: 414px;
         margin: 0 auto;
-        background: linear-gradient(169.45deg, #131747 13.82%, #000000 97.34%);
+        background: linear-gradient(169.45deg, #c20c0c 13.82%, #000000 97.34%);
         width: 100%;
         height: 100vh;
         position: relative;
@@ -102,10 +104,10 @@
     .content .name span {
         font-family: 'Stavok';
         text-transform: capitalize;
-        background: #8FA1D3;
+        background: #131747;
         padding: 8px;
         line-height: 32px;
-        color: #000000
+        color: #fff
     }
 
     .content .line {
@@ -415,6 +417,43 @@
             }
         }
     }
+
+    /* Styling untuk UI Audio */
+    .audio-ui {
+        margin-top: 10px;
+        text-align: center;
+        background-color: #fff;
+        /* Background putih */
+        border: 1px solid #fff;
+        /* Border putih */
+        border-radius: 10px;
+        padding: 10px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        /* Bayangan putih halus */
+    }
+
+    .audio-ui audio {
+        width: 100%;
+        background-color: #fff;
+        /* Background putih untuk player */
+        color: #000;
+        /* Teks hitam untuk kontras */
+        border-radius: 5px;
+    }
+
+    .audio-ui audio::-webkit-media-controls-panel {
+        background-color: #fff;
+        /* Kontrol putih untuk WebKit browsers (Chrome, Safari) */
+    }
+
+    .audio-ui audio::-webkit-media-controls-current-time-display,
+    .audio-ui audio::-webkit-media-controls-time-remaining-display {
+        color: #000;
+        /* Teks waktu hitam */
+    }
 </style>
 
 <body>
@@ -431,34 +470,45 @@
     <div class="main-container">
         <img src="img/pattern.png" class="bg">
         <div class="logos">
-            <img src="img/img-1.png">
+            <img src="img/22.jpg">
         </div>
         <div class="content">
-            <div class="name">Hai, <span><?php echo $_GET['to'] ?></span></div>
-            <div class="txt1">SELAMAT HARI RAYA</div>
-            <div class="txt2">Idul Fitri</div>
+            <div class="name">Hai, <span>
+                    <?php echo $_GET['to'] ?>
+                </span></div>
+            <div class="txt1">SELAMAT TAHUN BARU</div>
+            <div class="txt2">IMLEK 2026</div>
             <div class="greeting">
-                Minal Aidin Wal Faidzin,<br>
-                Mohon Maaf Lahir dan Batin.<br>
-                Izinkan Chiya mengucapkan Selamat Idulfitri 1445 Hijriah. Maafin Chiya karena suka merepotkan Taka,Ini sudah ke-2 kali chiya bikin web lebaran,Meskipun taka tidak membalas pesan chiya, Oiya chiya juga sudah tau siapa orang itu yang nyuruh,Mungkin taka kenal, Kalo Taka mau tau Chat Chiya Yaaa.<br><br>
+                Happy Chinese New Year, my dear friend. May this new year bring you endless joy, good health,
+                prosperity, and exciting opportunities. May your dreams grow brighter, your efforts be rewarded, and
+                your days be filled with laughter, love, and success. Wishing you happiness and abundant blessings
+                always throughout the year.<br><br>
                 <span>From Chiya, Diya and Noname</span> <br>
                 <?php echo $_GET['from'] ?><br>
+                <!-- UI Audio ditambahkan di sini -->
+                <div id="audio-container" class="audio-ui" style="display: none;">
+                    <audio id="audio-player" controls preload="none">
+                        <source src="audio/woaini.mp3" type="audio/mpeg"> <!-- Ganti dengan path file audio Anda -->
+                        Browser Anda tidak mendukung pemutaran audio.
+                    </audio>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function(event) {
-
-            $("input[type='text']").change(function() {
+        document.addEventListener('DOMContentLoaded', function (event) {
+            console.log("DOM loaded"); // Debug: Pastikan event listener berjalan
+            $("input[type='text']").change(function () {
+                console.log("Input changed"); // Debug: Pastikan input terdeteksi
                 $('.popup').addClass('hide');
                 $('.main-container').addClass('fadeIn');
                 $('.main-container .header').addClass('fadeIn2');
@@ -466,7 +516,6 @@
                 var str = "";
                 str = $(this).val() + " ";
                 $(".name span").text(str);
-
 
                 // array with texts to type in typewriter
                 var dataText = [str];
@@ -481,7 +530,7 @@
                             '<span aria-hidden="true"></span>';
 
                         // wait for a while and call this function again for next character
-                        setTimeout(function() {
+                        setTimeout(function () {
                             typeWriter(text, i + 1, fnCallback)
                         }, 100);
                     }
@@ -494,16 +543,19 @@
                 // start a typewriter animation for a text in the dataText array
                 function StartTextAnimation(i) {
                     if (typeof dataText[i] == 'undefined') {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             StartTextAnimation(0);
                         }, 4000);
                     }
                     // check if dataText[i] exists
                     if (i < 1) {
                         // text exists! start typewriter animation
-                        typeWriter(dataText[i], 0, function() {
+                        typeWriter(dataText[i], 0, function () {
                             // after callback (and whole text has been animated), start next text
                             StartTextAnimation(i + 1);
+                            // TAMBAHKAN: Munculkan UI audio setelah animasi selesai
+                            console.log("Typewriter done, showing audio"); // Debug: Pastikan callback dipanggil
+                            $('#audio-container').fadeIn(1000); // Animasi fadeIn selama 1 detik
                         });
                     }
                 }
